@@ -40,12 +40,7 @@ app.use(session({
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
-const storage = multer.diskStorage({
-    destination: './uploads/',
-    filename: (req, file, cb) => {
-        cb(null, Date.now() + path.extname(file.originalname)); // Unique file name
-    }
-});
+
 // const upload = multer({ storage });
 const getUserIP = (req) => {
     return req.headers['x-forwarded-for'] || req.connection.remoteAddress;
