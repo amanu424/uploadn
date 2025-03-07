@@ -1,0 +1,407 @@
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --success-color: #2ecc71;
+            --background-color: #ecf0f1;
+            --text-color: #2c3e50;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        p {
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+        }
+        .scanner-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .scanner {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .scanner:hover {
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        .fingerprint {
+            width: 64px;
+            height: 64px;
+            fill: var(--secondary-color);
+            transition: fill 0.3s ease;
+        }
+        .scanner.scanning .fingerprint {
+            fill: var(--accent-color);
+        }
+        .scanner.success .fingerprint {
+            fill: var(--success-color);
+        }
+        .progress-ring {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 120px;
+            height: 120px;
+        }
+        .progress-ring__circle {
+            transition: 0.35s stroke-dashoffset;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+            stroke: var(--accent-color);
+        }
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background-color: #e0e0e0;
+            border-radius: 2px;
+            margin-top: 1.5rem;
+            overflow: hidden;
+        }
+        .progress-bar__fill {
+            height: 100%;
+            background-color: var(--accent-color);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .message {
+            margin-top: 1rem;
+            font-weight: 600;
+            text-align: center;
+            min-height: 1.5em;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: fit-content;
+            background-color: #f0f4f8;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .description {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 1.5rem;
+        }
+        .scanner-section {
+            margin-bottom: 2rem;
+        }
+        h2 {
+            color: #34495e;
+            margin-bottom: 1rem;
+        }
+        #faceScanner {
+            width: 100%;
+            height: 300px;
+            background-color: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        #faceScanner img {
+            width: 64px;
+            height: 64px;
+        }
+        #faceScanner video, #faceScanner canvas {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .button-group {
+            display: flex;
+            gap: 1rem;
+        }
+        .button {
+            flex: 1;
+            padding: 0.75rem;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1rem;
+        }
+        .button:hover {
+            background-color: #2980b9;
+        }
+        .button.secondary {
+            background-color: #95a5a6;
+        }
+        .button.secondary:hover {
+            background-color: #7f8c8d;
+        }
+      
+        .fingerprint, .checkmark {
+    width: 64px;
+    height: 64px;
+    transition: fill 0.3s ease, opacity 0.3s ease;
+}
+
+.checkmark {
+    position: absolute;
+    opacity: 0;
+}
+
+.scanner.success .fingerprint {
+    opacity: 0;
+}
+
+.scanner.success .checkmark {
+    opacity: 1;
+    fill: var(--success-color);
+}
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --success-color: #2ecc71;
+            --background-color: #ecf0f1;
+            --text-color: #2c3e50;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        p {
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+        }
+        .scanner-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .scanner {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .scanner:hover {
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        .fingerprint {
+            width: 64px;
+            height: 64px;
+            fill: var(--secondary-color);
+            transition: fill 0.3s ease;
+        }
+        .scanner.scanning .fingerprint {
+            fill: var(--accent-color);
+        }
+        .scanner.success .fingerprint {
+            fill: var(--success-color);
+        }
+        .progress-ring {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 120px;
+            height: 120px;
+        }
+        .progress-ring__circle {
+            transition: 0.35s stroke-dashoffset;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+            stroke: var(--accent-color);
+        }
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background-color: #e0e0e0;
+            border-radius: 2px;
+            margin-top: 1.5rem;
+            overflow: hidden;
+        }
+        .progress-bar__fill {
+            height: 100%;
+            background-color: var(--accent-color);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .message {
+            margin-top: 1rem;
+            font-weight: 600;
+            text-align: center;
+            min-height: 1.5em;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: fit-content;
+            background-color: #f0f4f8;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .description {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 1.5rem;
+        }
+        .scanner-section {
+            margin-bottom: 2rem;
+        }
+        h2 {
+            color: #34495e;
+            margin-bottom: 1rem;
+        }
+        #faceScanner {
+            width: 100%;
+            height: 300px;
+            background-color: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        #faceScanner img {
+            width: 64px;
+            height: 64px;
+        }
+        #faceScanner video, #faceScanner canvas {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .button-group {
+            display: flex;
+            gap: 1rem;
+        }
+        .button {
+            flex: 1;
+            padding: 0.75rem;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1rem;
+        }
+        .button:hover {
+            background-color: #2980b9;
+        }
+        .button.secondary {
+            background-color: #95a5a6;
+        }
+        .button.secondary:hover {
+            background-color: #7f8c8d;
+        }
+       #completeButton {
+            position: ;
+            bottom: ;
+            margin: auto;
+            right: ;
+            padding: 0.75rem 1.5rem;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s, opacity 0.3s;
+            font-size: 1.25rem;
+            display: none;
+        }
+        #completeButton:hover {
+            background-color: #2ecc71;
+        }
+        .fingerprint, .checkmark {
+    width: 64px;
+    height: 64px;
+    transition: fill 0.3s ease, opacity 0.3s ease;
+}
+
+.checkmark {
+    position: absolute;
+    opacity: 0;
+}
+
+.scanner.success .fingerprint {
+    opacity: 0;
+}
+
+.scanner.success .checkmark {
+    opacity: 1;
+    fill: var(--success-color);
+}
